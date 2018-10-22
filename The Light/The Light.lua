@@ -23,6 +23,11 @@ else
   output = io.output()
 end
 
+-- Modify print to redirect debug messages to stderr.
+local function print(msg)
+  io.stderr:write(msg.."\n")
+end
+
 -- Load data.
 local data = {}
 for l in input:lines() do
