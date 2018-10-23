@@ -69,10 +69,13 @@ for _, t in ipairs(data) do
     first_enter_time = enter_time
     last_exit_time = exit_time
     print("A new person entered the room at "..enter_time.." and stayed until "..exit_time..".")
-  else
+  elseif exit_time>=last_exit_time then
     -- Continue recording movement.
     last_exit_time = exit_time
     print("Next person got in at "..enter_time.." and stayed in until "..exit_time..".")
+  else
+    -- Nothing to record.
+    print("Next person got ignored.")
   end
 end
 
